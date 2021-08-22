@@ -21,7 +21,7 @@
             <input type="text" class="form-control" name="nickname" placeholder="ニックネーム" maxlength="50" require autofocus>
             <input type="text" class="form-control" name="name" placeholder="ユーザー名、例)techis132" maxlength="50" require>
             <input type="email" class="form-control" name="email" placeholder="メールアドレス" maxlength="254" require>
-            <input type="password" class="form-control" name="password" placeholder="パスワード" minlength="4" maxlength="50" require>
+            <input type="password" class="form-control" name="password" placeholder="パスワード" minlength="4" maxlength="128" require>
             <button class="w-100 btn btn-lg" type="sibmit">登録する</button>
             <p class="mt-3 mb-2"><a href="sign-in.php">ログインする</a></p>
             <p class="mt-2 mb-3 text-muted">&copy; 2021</p>
