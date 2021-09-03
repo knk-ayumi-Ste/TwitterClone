@@ -40,7 +40,7 @@ function createUser(array $data)
         echo 'エラーメッセージ:' . $mysqli->error . "\n";
     }
 
-    // DB接続を開放
+    // DB接続を解放
     $statement->close();
     $mysqli->close();
 
@@ -69,7 +69,7 @@ function findUserAndCheckPassword(string $email, string $password)
     $email = $mysqli->real_escape_string($email);
 
     // SQLクエリを作成
-    // - 外部からのリクエストは何が入っているかわからないので、必ず、エスケープしたものを区オートで囲む
+    // - 外部からのリクエストは何が入っているかわからないので、必ず、エスケープしたものをクオートで囲む
     $query = 'SELECT * FROM users WHERE email = "' .$email . '"';
 
     // クエリ実行
@@ -87,17 +87,17 @@ function findUserAndCheckPassword(string $email, string $password)
     $user = $result->fetch_array(MYSQLI_ASSOC);
     // ユーザーが存在しない場合->return
     if (!$user) {
-        $mysqli->colse();
+        $mysqli->close();
         return false;
     }
 
     // パスワードチェック、不一致の場合->return
     if (!password_verify($password, $user['password'])) {
-        $mysqli->colse();
+        $mysqli->close();
         return false;
     }
 
-    // DB接続を開放
+    // DB接続を解放
     $mysqli->close();
 
     return $user;

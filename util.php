@@ -8,11 +8,11 @@
  * 
  * @param string $name 画像ファイル名
  * @param string $type user | tweet
- * @return 
+ * @return string
  */
 function buildImagePath(string $name = null, string $type)
 {
-    if ($type === 'user' && !isset($name)){
+    if ($type === 'user' && !isset($name)) {
         return HOME_URL . 'Views/img/icon-default-user.svg';
     }
 
@@ -45,10 +45,10 @@ function convertToDayTimeAgo(string $datetime)
         $unit = '日前';
     } else{
 
-        if (date('Y') !== date('Y',$unix)){
+        if (date('Y') !== date('Y',$unix)) {
             $time = date('Y年n月j日',$unix);
         } else {
-            $time =date('n月j日',$unix);
+            $time = date('n月j日',$unix);
         }
         return $time;
     }

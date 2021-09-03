@@ -10,7 +10,7 @@ include_once '../util.php';
 // ユーザーデータ操作モデルを読み込み
 include_once '../Models/users.php';
 
-// 登録項目がすべて入力されて入れば
+// 登録項目がすべて入力されていれば
 if (isset($_POST['nickname']) && isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password'])) {
     $data = [
         'nickname' => $_POST['nickname'],

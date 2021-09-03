@@ -9,8 +9,8 @@
 
 <body class="home">
     <div class="container">
-    <?php include_once('../Views/common/side.php'); ?>
-    <div class="main">
+        <?php include_once('../Views/common/side.php'); ?>
+        <div class="main">
             <div class="main-header">
                 <h1>ホーム</h1>
             </div>
