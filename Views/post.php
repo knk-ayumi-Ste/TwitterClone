@@ -1,10 +1,3 @@
-<?php
-// 設定関連を読み込む
-include_once('../config.php');
-// 便利な関数を読み込む
-include_once('../util.php');
-
-?>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -16,8 +9,8 @@ include_once('../util.php');
 
 <body class="home">
     <div class="container">
-    <?php include_once('../Views/common/side.php'); ?>
-    <div class="main">
+        <?php include_once('../Views/common/side.php'); ?>
+        <div class="main">
             <div class="main-header">
                 <h1>つぶやく</h1>
             </div>
@@ -25,7 +18,7 @@ include_once('../util.php');
             <!-- つぶやき投稿エリア -->
             <div class="tweet-post">
                 <div class="my-icon">
-                    <img src="<?php echo HOME_URL;?>Views/img_uploaded/user/sample-person.jpg" alt="">
+                    <img src="<?php echo htmlspecialchars($view_user['image_path']); ?>" alt="">
                 </div>
                 <div class="input-area">
                     <form action="post.php" method="post" enctype="multipart/form-data">
@@ -42,7 +35,6 @@ include_once('../util.php');
 
             <!-- 仕切りエリア -->
             <div class="ditch"></div>
-
         </div>
     </div>
     <?php include_once('../Views/common/foot.php'); ?>
